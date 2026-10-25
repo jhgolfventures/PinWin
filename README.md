@@ -19,3 +19,9 @@ The updates page prepares an explicit email request; it does not pretend to subs
 ## Verification
 
 Check all marketing pages, compact navigation, query-conditioned login, signup, confirmation callback, recovery, protected routes, signed-in dashboard, sign-out, and existing-user continuity. Client code never establishes permissions; existing RLS and authenticated RPCs remain authoritative. Keep production callback URLs exact and preserve native callbacks.
+
+## Marketing brand and member navigation
+
+Public visual direction comes from `Marketing/PinWin-Brand-and-App-Proposal-for-Joe.pdf` (24 October 2026), not the current app interface. `assets/marketing-*-concept.webp` are extracted proposal illustrations, labelled as design concepts on the site. Nine-format marketing lineup includes Solo, Singles Match Play, Four-Ball Match Play, Skins, Individual Stroke Play, Stableford, Scramble, Team Best Ball and Lone Ranger. Inclusion describes the owner-approved lineup; it does not implement or unlock app engines. Public copy acknowledges development/QA. Our Story main copy is preserved.
+
+`assets/member-shell.css` and `scripts/apply-member-shell.mjs` add a website-only Back to Website bar outside the React root. It persists during client navigation and uses a normal `/` link without signing out. Build reapplies the idempotent shell after future app exports. Native app sources and compiled app scripts are unchanged by this shell.

@@ -1,0 +1,8 @@
+/* Website shell only. Do not modify the compiled app UI or its sessions. */
+body{display:flex;flex-direction:column;height:100%;margin:0}
+.website-return-bar{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px;flex:0 0 auto;min-height:44px;padding:0 max(16px,env(safe-area-inset-left));background:#f7f5e9;border-bottom:1px solid #ced6c9;color:#0c3024;font:600 12px/1.4 system-ui,-apple-system,sans-serif;z-index:1}
+.website-return-bar a{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none;padding:0 8px}
+.website-return-bar a:hover{text-decoration:underline;text-underline-offset:4px}
+.website-return-bar a:focus-visible{outline:3px solid #997400;outline-offset:-3px}
+.website-return-bar span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding-right:8px}
+body>#root{height:0!important;min-height:0;flex:1 1 0%}

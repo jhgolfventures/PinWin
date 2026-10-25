@@ -46,7 +46,7 @@
     }
   ],
   "framework": null,
-  "buildCommand": "node scripts/verify-site.mjs",
+  "buildCommand": "node scripts/apply-member-shell.mjs && node scripts/verify-site.mjs",
   "outputDirectory": ".",
   "installCommand": ""
 }
