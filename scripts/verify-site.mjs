@@ -38,3 +38,6 @@ const config = JSON.parse(readFileSync(resolve(root, 'vercel.json'), 'utf8'));
 assert(config.cleanUrls);
 assert(config.rewrites.some(rule => rule.source === '/' && rule.has?.some(item => item.key === 'account' && item.value === '1')));
 console.log(`Verified ${checked} asset/page links, public page structure, private-page indexing, and account routing.`);
+assert(!existsSync(resolve(root, 'index.html')), 'A physical index.html bypasses the conditional account home rewrite.');
+assert(config.rewrites.some(rule => rule.source === '/' && rule.destination === '/public-home' && !rule.has), 'Public homepage fallback is missing.');
+assert(config.rewrites.every(rule => !rule.destination.endsWith('.html')), 'cleanUrls rewrite destinations must omit .html.');
