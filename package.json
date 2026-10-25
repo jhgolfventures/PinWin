@@ -3,8 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "typecheck": "node --check assets/site.js",
+    "typecheck": "node --check assets/site.js && node --check scripts/apply-member-shell.mjs",
     "test": "node scripts/verify-site.mjs",
-    "build": "node scripts/verify-site.mjs"
+    "build": "node scripts/apply-member-shell.mjs && node scripts/verify-site.mjs"
   }
 }
