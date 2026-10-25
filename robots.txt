@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /home
+Disallow: /profile
+Disallow: /money
+Disallow: /auth/
+Sitemap: https://www.pinwingolf.com/sitemap.xml

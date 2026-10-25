@@ -1,0 +1,10 @@
+{
+  "name": "pinwin-golf-website",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "typecheck": "node --check assets/site.js",
+    "test": "node scripts/verify-site.mjs",
+    "build": "node scripts/verify-site.mjs"
+  }
+}
