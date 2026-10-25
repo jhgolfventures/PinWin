@@ -24,7 +24,7 @@ function scan(directory) {
   }
 }
 scan(root);
-const publicPages = ['index', 'how-it-works', 'games', 'community', 'about', 'contact', 'updates', 'website-privacy'];
+const publicPages = ['public-home', 'how-it-works', 'games', 'community', 'about', 'contact', 'updates', 'website-privacy'];
 for (const name of publicPages) {
   const html = readFileSync(resolve(root, name + '.html'), 'utf8');
   assert(!/early.access|private beta|request access/i.test(html), `${name} still advertises early access`);

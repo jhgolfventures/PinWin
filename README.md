@@ -6,7 +6,7 @@ Public brand website and the shared PinWin web application, deployed by Vercel p
 
 The member routes/assets are an Expo static export of PinWin-App commit `2758471`. They use the existing production Supabase project and its browser-safe publishable key. There is no second identity database. Apple/Google flags remain disabled. No database migration is included. Current application release limitations remain recorded in PinWin-App docs/BETA_STATUS.md. This website deployment is not mobile App Store release acceptance.
 
-`/?account=1` uses a query-conditioned Vercel rewrite to serve the exported welcome/login screen at the app's canonical `/` route. `/signup`, `/home`, `/auth/callback`, `/new-password`, `/profile` and other existing app routes use their static exports. Marketing `/` remains the public homepage. Do not replace the app's canonical root route with an arbitrary `/login` URL.
+`/?account=1` uses a query-conditioned Vercel rewrite to serve the exported welcome/login screen at the app's canonical `/` route. `/signup`, `/home`, `/auth/callback`, `/new-password`, `/profile` and other existing app routes use their static exports. Marketing `/` rewrites to public-home.html. There must be no physical index.html: Vercel resolves it before query-conditioned rewrites. Do not replace the app's canonical root route with an arbitrary `/login` URL.
 
 ## Rebuilding
 

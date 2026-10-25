@@ -11,6 +11,10 @@
         }
       ],
       "destination": "/account-entry"
+    },
+    {
+      "source": "/",
+      "destination": "/public-home"
     }
   ],
   "headers": [
