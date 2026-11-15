@@ -41,3 +41,8 @@ console.log(`Verified ${checked} asset/page links, public page structure, privat
 assert(!existsSync(resolve(root, 'index.html')), 'A physical index.html bypasses the conditional account home rewrite.');
 assert(config.rewrites.some(rule => rule.source === '/' && rule.destination === '/public-home' && !rule.has), 'Public homepage fallback is missing.');
 assert(config.rewrites.every(rule => !rule.destination.endsWith('.html')), 'cleanUrls rewrite destinations must omit .html.');
+// #407: iOS Passwords AutoFill reads this file for webcredentials:pinwingolf.com. Apple requires JSON, no redirect.
+const association = JSON.parse(readFileSync(resolve(root, '.well-known/apple-app-site-association'), 'utf8'));
+assert.deepEqual(association.webcredentials?.apps, ['79RSZT57Q2.com.joehajjar.PinWin'], 'Apple app site association must name the PinWin app.');
+assert(config.headers.some(rule => rule.source === '/.well-known/apple-app-site-association'
+  && rule.headers.some(header => header.key === 'Content-Type' && header.value === 'application/json')), 'Apple app site association must be served as JSON.');
